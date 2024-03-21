@@ -19,6 +19,13 @@
   flex-direction: column;
   justify-content: center;
   padding-left: 3rem;
+  position: relative;
+}
+.filter img {
+  width: 40%;
+  position: absolute;
+  border-radius: 20px;
+  right: 7%;
 }
 .filter h2 {
   font-size: 50px;

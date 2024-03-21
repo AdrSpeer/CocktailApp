@@ -12,30 +12,35 @@ const Home = () => {
           <div className="filter background-1">
             <h2>Gin</h2>
             <p>Lorem ipsum dolor sit amet.</p>
+            <img src="../../../public/svg/Gin.jpg" alt="" />
           </div>
         </Link>
         <Link to={`/types/vodka`}>
           <div className="filter background-2">
             <h2>Vodka</h2>
             <p>Lorem ipsum dolor sit amet.</p>
+            <img src="../../../public/svg/vodka.jpg" alt="" />
           </div>
         </Link>
         <Link to={`/types/rum`}>
           <div className="filter background-3">
             <h2>Rum</h2>
             <p>Lorem ipsum dolor sit amet.</p>
+            <img src="../../../public/svg/rum2.avif" alt="" />
           </div>
         </Link>
         <Link to={`/types/scotch`}>
           <div className="filter background-4">
             <h2>Scotch</h2>
             <p>Lorem ipsum dolor sit amet.</p>
+            <img src="../../../public/svg/scotch.jpg" alt="" />
           </div>
         </Link>
-        <Link to={`/types/Non_Alcoholic`}>
+        <Link to={`/types/non-alcoholic`}>
           <div className="filter background-5">
             <h2>Alkoholfrei</h2>
             <p>Lorem ipsum dolor sit amet.</p>
+            <img src="../../../public/svg/Gin.jpg" alt="" />
           </div>
         </Link>
         <div className="filter background-6" onClick={"filler"}>
