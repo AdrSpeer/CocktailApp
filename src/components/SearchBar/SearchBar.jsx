@@ -1,7 +1,11 @@
-import 'SearchBar.css';
+import "./SearchBar.css";
 
 const SearchBar = () => {
-  return <></>;
+  return (
+    <>
+      <input type="text" placeholder="Suchen..." />
+    </>
+  );
 };
 
 export default SearchBar;
