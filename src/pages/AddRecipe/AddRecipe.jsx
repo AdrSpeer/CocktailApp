@@ -15,9 +15,6 @@ const AddRecipe = () => {
     event.preventDefault();
     setNewCocktail((cocktailInput) => [...cocktailInput, cocktailConstructor]);
     setCocktailConstructor({});
-    document
-      .querySelectorAll(".form-recipe")
-      .forEach((input) => (input.value = ""));
   };
 
   console.log(storedCocktail);
