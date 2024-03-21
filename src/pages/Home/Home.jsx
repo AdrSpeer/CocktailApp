@@ -7,43 +7,42 @@ const Home = () => {
   return (
     <>
       <Header />
-      <section className="filter-grid">
-        <Link to={`/types/}`}>
-          <div className="filter-1">
+      <section className="filter-grid" id="jump">
+        <Link to={`/types/gin}`}>
+          <div className="filter background-1">
             <h2>Gin</h2>
             <p>Lorem ipsum dolor sit amet.</p>
           </div>
         </Link>
-        <Link to={`/types/}`}>
-          <div className="filter-2">
+        <Link to={`/types/vodka}`}>
+          <div className="filter background-2">
             <h2>Vodka</h2>
             <p>Lorem ipsum dolor sit amet.</p>
           </div>
         </Link>
-        <Link to={`/types/}`}>
-          <div className="filter-3">
+        <Link to={`/types/rum}`}>
+          <div className="filter background-3">
             <h2>Rum</h2>
             <p>Lorem ipsum dolor sit amet.</p>
           </div>
         </Link>
-        <Link to={`/types/}`}>
-          <div className="filter-4">
+        <Link to={`/types/scotch}`}>
+          <div className="filter background-4">
             <h2>Scotch</h2>
             <p>Lorem ipsum dolor sit amet.</p>
           </div>
         </Link>
-        <Link to={`/types/}`}>
-          <div className="filter-5">
+        <Link to={`/types/non-acloholic}`}>
+          <div className="filter background-5">
             <h2>Alkoholfrei</h2>
             <p>Lorem ipsum dolor sit amet.</p>
           </div>
         </Link>
-        <Link to={`/types/}`}>
-          <div className="filter-6">
-            <h2>Zufall</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-        </Link>
+        <div className="filter background-6" onClick={"filler"}>
+          <h2>Zufall</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p className="question">?</p>
+        </div>
       </section>
       <Footer />
     </>
