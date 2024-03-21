@@ -1,0 +1,69 @@
+/* Grid Styling */
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 37%);
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+.filter-grid a {
+  text-decoration: none;
+}
+
+/* Kachel Styling & Schrift */
+.filter {
+  border-radius: 20px;
+  color: var(--global--accent--Color);
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3rem;
+  position: relative;
+}
+.filter img {
+  width: 40%;
+  position: absolute;
+  border-radius: 20px;
+  right: 7%;
+}
+.filter h2 {
+  font-size: 50px;
+  font-family: "Playfair Display";
+  font-weight: 900;
+}
+.filter p {
+  font-size: 16px;
+  font-family: "Source Serif 4";
+}
+
+/* Background-Color der Kacheln */
+.background-1 {
+  background-color: #29343e;
+}
+.background-2 {
+  background-color: #6f4f38;
+}
+.background-3 {
+  background-color: #550f05;
+}
+.background-4 {
+  background-color: #5f442b;
+}
+.background-5 {
+  background-color: #574b1f;
+}
+.background-5 img {
+  right: 3%;
+  width: 35%;
+}
+.background-6 {
+  background-color: #28280b;
+  position: relative;
+}
+.background-6 .question {
+  font-size: 300px;
+  position: absolute;
+  right: 10%;
+  transform: rotate(10deg);
+}
