@@ -55,6 +55,10 @@
   src: url('/fonts/poppins-v20-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+:root {
+  --global--accent--Color: #ffe3e8;
+}
+
 /* makes sizing simpler */
 *,
 *::before,
