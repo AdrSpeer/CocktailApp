@@ -26,7 +26,7 @@ const Home = () => {
           <div className="filter background-3">
             <h2>Rum</h2>
             <p>Lorem ipsum dolor sit amet.</p>
-            <img src="../../../public/svg/rum2.avif" alt="" />
+            <img src="../../../public/svg/rum.jpg" alt="" />
           </div>
         </Link>
         <Link to={`/types/scotch`}>
@@ -40,7 +40,7 @@ const Home = () => {
           <div className="filter background-5">
             <h2>Alkoholfrei</h2>
             <p>Lorem ipsum dolor sit amet.</p>
-            <img src="../../../public/svg/Gin.jpg" alt="" />
+            <img src="../../../public/svg/none.jpg" alt="" />
           </div>
         </Link>
         <div className="filter background-6" onClick={"filler"}>

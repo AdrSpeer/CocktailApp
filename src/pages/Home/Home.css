@@ -53,6 +53,10 @@
 .background-5 {
   background-color: #574b1f;
 }
+.background-5 img {
+  right: 3%;
+  width: 35%;
+}
 .background-6 {
   background-color: #28280b;
   position: relative;
