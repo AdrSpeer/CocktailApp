@@ -1,15 +1,11 @@
-import Logo from "../../assets/svg/Logo";
-import Menu from "../Menu/Menu";
+import Nav from "../Nav/Nav";
 import SearchBar from "../SearchBar/SearchBar";
 import "./Header.css";
 
 const Header = () => {
   return (
     <header>
-      <nav>
-        <Logo />
-        <Menu />
-      </nav>
+      <Nav />
       <section className="hero">
         <div className="hero-con">
           <div className="text-con">
