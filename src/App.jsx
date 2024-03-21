@@ -15,6 +15,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/add-recipe' element={<AddRecipe />} />
           <Route path='/types' element={<TypesPage />} />
+          <Route path='/types:type' element={<TypesPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeContext.Provider>
