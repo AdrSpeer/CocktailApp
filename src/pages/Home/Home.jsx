@@ -32,7 +32,7 @@ const Home = () => {
             <p>Lorem ipsum dolor sit amet.</p>
           </div>
         </Link>
-        <Link to={`/types/non-acloholic`}>
+        <Link to={`/types/Non_Alcoholic`}>
           <div className="filter background-5">
             <h2>Alkoholfrei</h2>
             <p>Lorem ipsum dolor sit amet.</p>
