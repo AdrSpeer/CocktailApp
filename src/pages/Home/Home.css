@@ -66,3 +66,12 @@
   right: 10%;
   transform: rotate(10deg);
 }
+
+.up {
+  width: 50px;
+  position: sticky;
+  top: 90%;
+  left: 90%;
+  margin-right: 10px;
+  z-index: 10;
+}

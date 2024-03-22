@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import "./Home.css";
 import Footer from "../../components/Footer/Footer";
+import Up from "../../assets/svg/up";
 
 // fehlerbehebung dummy
 function filler() {
@@ -18,78 +19,51 @@ const Home = () => {
   return (
     <>
       <Header />
+      <Up />
       <section className="filter-grid" id="drinks">
-        <HashLink
-          smooth
-          scroll={(el) => scrollWithOffset(el)}
-          to={`/types/gin#drinks`}
-        >
+        <HashLink smooth scroll={(el) => scrollWithOffset(el)} to={`/types/gin#drinks`}>
           <div className="filter background-1">
             <h2>Gin</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/Gin.jpg" alt="" />
           </div>
         </HashLink>
-        <HashLink
-          smooth
-          scroll={(el) => scrollWithOffset(el)}
-          to={`/types/vodka#drinks`}
-        >
+        <HashLink smooth scroll={(el) => scrollWithOffset(el)} to={`/types/vodka#drinks`}>
           <div className="filter background-2">
             <h2>Vodka</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/vodka.jpg" alt="" />
           </div>
         </HashLink>
-        <HashLink
-          smooth
-          scroll={(el) => scrollWithOffset(el)}
-          to={`/types/rum#drinks`}
-        >
+        <HashLink smooth scroll={(el) => scrollWithOffset(el)} to={`/types/rum#drinks`}>
           <div className="filter background-3">
             <h2>Rum</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/rum.jpg" alt="" />
           </div>
         </HashLink>
-        <HashLink
-          smooth
-          scroll={(el) => scrollWithOffset(el)}
-          to={`/types/scotch#drinks`}
-        >
+        <HashLink smooth scroll={(el) => scrollWithOffset(el)} to={`/types/scotch#drinks`}>
           <div className="filter background-4">
             <h2>Scotch</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/scotch.jpg" alt="" />
           </div>
         </HashLink>
-        <HashLink
-          smooth
-          scroll={(el) => scrollWithOffset(el)}
-          to={`/types/scotch#drinks`}
-        >
+        <HashLink smooth scroll={(el) => scrollWithOffset(el)} to={`/types/scotch#drinks`}>
           <div className="filter background-4">
             <h2>Tequila</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/tequila.jpg" alt="" />
           </div>
         </HashLink>
-        <HashLink
-          smooth
-          scroll={(el) => scrollWithOffset(el)}
-          to={`/types/scotch#drinks`}
-        >
+        <HashLink smooth scroll={(el) => scrollWithOffset(el)} to={`/types/scotch#drinks`}>
           <div className="filter background-4">
             <h2>Bourbon</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/Bourbon.jpg" alt="" />
           </div>
         </HashLink>
-        <HashLink
-          smooth
-          scroll={(el) => scrollWithOffset(el)}
-          to={`/types/non-alcoholic#drinks`}
-        >
+        <HashLink smooth scroll={(el) => scrollWithOffset(el)} to={`/types/non-alcoholic#drinks`}>
           <div className="filter background-5">
             <h2>Alkoholfrei</h2>
             <p>Lorem ipsum dolor sit amet.</p>
@@ -102,6 +76,7 @@ const Home = () => {
           <p className="question">?</p>
         </div>
       </section>
+
       <Footer />
     </>
   );

@@ -3,6 +3,7 @@ import Nav from "../Nav/Nav";
 import SearchBar from "../SearchBar/SearchBar";
 import "./Header.css";
 import { HashLink } from "react-router-hash-link";
+import PopUp from "../PopUp/PopUp";
 
 const Header = () => {
   const scrollWithOffset = (el) => {
@@ -12,7 +13,8 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header id="home">
+      <PopUp />
       <Nav />
       <section className="hero">
         <div className="hero-con">
