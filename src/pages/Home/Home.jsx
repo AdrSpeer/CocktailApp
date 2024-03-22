@@ -66,6 +66,28 @@ const Home = () => {
         <HashLink
           smooth
           scroll={(el) => scrollWithOffset(el)}
+          to={`/types/scotch#drinks`}
+        >
+          <div className="filter background-4">
+            <h2>Tequila</h2>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <img src="../../../public/svg/tequila.jpg" alt="" />
+          </div>
+        </HashLink>
+        <HashLink
+          smooth
+          scroll={(el) => scrollWithOffset(el)}
+          to={`/types/scotch#drinks`}
+        >
+          <div className="filter background-4">
+            <h2>Bourbon</h2>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <img src="../../../public/svg/Bourbon.jpg" alt="" />
+          </div>
+        </HashLink>
+        <HashLink
+          smooth
+          scroll={(el) => scrollWithOffset(el)}
           to={`/types/non-alcoholic#drinks`}
         >
           <div className="filter background-5">
