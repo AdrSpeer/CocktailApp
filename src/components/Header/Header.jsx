@@ -29,7 +29,7 @@ const Header = () => {
         </div>
       </section>
       <div className="arrow-div">
-        <HashLink smooth scroll={(el) => scrollWithOffset(el)} to="/#drinks">
+        <HashLink smooth scroll={(el) => scrollWithOffset(el)} to="#drinks">
           <ArrowScroll />
         </HashLink>
       </div>
