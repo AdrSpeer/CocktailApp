@@ -10,39 +10,64 @@ function filler() {
 }
 
 const Home = () => {
+  const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -20;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
+  };
   return (
     <>
       <Header />
       <section className="filter-grid" id="jump">
-        <HashLink to={`/types/gin#jump`}>
+        <HashLink
+          smooth
+          scroll={(el) => scrollWithOffset(el)}
+          to={`/types/gin#jump`}
+        >
           <div className="filter background-1">
             <h2>Gin</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/Gin.jpg" alt="" />
           </div>
         </HashLink>
-        <HashLink to={`/types/vodka#jump`}>
+        <HashLink
+          smooth
+          scroll={(el) => scrollWithOffset(el)}
+          to={`/types/vodka#jump`}
+        >
           <div className="filter background-2">
             <h2>Vodka</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/vodka.jpg" alt="" />
           </div>
         </HashLink>
-        <HashLink to={`/types/rum#jump`}>
+        <HashLink
+          smooth
+          scroll={(el) => scrollWithOffset(el)}
+          to={`/types/rum#jump`}
+        >
           <div className="filter background-3">
             <h2>Rum</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/rum.jpg" alt="" />
           </div>
         </HashLink>
-        <HashLink to={`/types/scotch#jump`}>
+        <HashLink
+          smooth
+          scroll={(el) => scrollWithOffset(el)}
+          to={`/types/scotch#jump`}
+        >
           <div className="filter background-4">
             <h2>Scotch</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/scotch.jpg" alt="" />
           </div>
         </HashLink>
-        <HashLink to={`/types/non-alcoholic#jump`}>
+        <HashLink
+          smooth
+          scroll={(el) => scrollWithOffset(el)}
+          to={`/types/non-alcoholic#jump`}
+        >
           <div className="filter background-5">
             <h2>Alkoholfrei</h2>
             <p>Lorem ipsum dolor sit amet.</p>
