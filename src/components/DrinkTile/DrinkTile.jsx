@@ -6,7 +6,7 @@ const DrinkTile = ({ props }) => {
       {props ? (
         props?.map((drink) => {
           console.log(drink.strDrink, drink.idDrink);
-          <div className='filter background-1' key={drink.idDrink}>
+          <div className='filter' key={drink.idDrink}>
             <p>{drink.strDrink}</p>
             <img src={drink.strDrinkThumb} alt='a picture of the drink' />
           </div>;
