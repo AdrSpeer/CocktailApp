@@ -18,11 +18,11 @@ const Home = () => {
   return (
     <>
       <Header />
-      <section className="filter-grid" id="jump">
+      <section className="filter-grid" id="drinks">
         <HashLink
           smooth
           scroll={(el) => scrollWithOffset(el)}
-          to={`/types/gin#jump`}
+          to={`/types/gin#drinks`}
         >
           <div className="filter background-1">
             <h2>Gin</h2>
@@ -33,7 +33,7 @@ const Home = () => {
         <HashLink
           smooth
           scroll={(el) => scrollWithOffset(el)}
-          to={`/types/vodka#jump`}
+          to={`/types/vodka#drinks`}
         >
           <div className="filter background-2">
             <h2>Vodka</h2>
@@ -44,7 +44,7 @@ const Home = () => {
         <HashLink
           smooth
           scroll={(el) => scrollWithOffset(el)}
-          to={`/types/rum#jump`}
+          to={`/types/rum#drinks`}
         >
           <div className="filter background-3">
             <h2>Rum</h2>
@@ -55,7 +55,7 @@ const Home = () => {
         <HashLink
           smooth
           scroll={(el) => scrollWithOffset(el)}
-          to={`/types/scotch#jump`}
+          to={`/types/scotch#drinks`}
         >
           <div className="filter background-4">
             <h2>Scotch</h2>
@@ -66,7 +66,7 @@ const Home = () => {
         <HashLink
           smooth
           scroll={(el) => scrollWithOffset(el)}
-          to={`/types/non-alcoholic#jump`}
+          to={`/types/non-alcoholic#drinks`}
         >
           <div className="filter background-5">
             <h2>Alkoholfrei</h2>
