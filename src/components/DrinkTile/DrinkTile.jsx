@@ -2,7 +2,7 @@ import './DrinkTile.css';
 
 const DrinkTile = ({ props }) => {
   return (
-    <section className='filter-grid' id='drinks'>
+    <section className='drink-grid' id='drinks'>
       {props ? (
         props?.map((drink) => (
           <div className='filter' key={drink.idDrink}>

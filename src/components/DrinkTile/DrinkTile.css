@@ -1,0 +1,25 @@
+.drink-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 37%);
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  div:nth-of-type(6n + 1) {
+    background-color: #29343e;
+  }
+  div:nth-of-type(6n + 2) {
+    background: #6f4f38;
+  }
+  div:nth-of-type(6n + 3) {
+    background: #550f05;
+  }
+  div:nth-of-type(6n + 4) {
+    background: #5f442b;
+  }
+  div:nth-of-type(6n + 5) {
+    background: #574b1f;
+  }
+  div:nth-of-type(6n + 6) {
+    background: #28280b;
+  }
+}
