@@ -1,146 +1,123 @@
-import Footer from '../../components/Footer/Footer';
-import './AddRecipe.css';
-import { useState, useEffect } from 'react';
+import Footer from "../../components/Footer/Footer";
+import "./AddRecipe.css";
+import { useState, useEffect } from "react";
 
 const AddRecipe = () => {
-  const storedCocktail = JSON.parse(localStorage.getItem('newCocktail'));
+  const [newCocktail, setNewCocktail] = useState([]);
   const [cocktailConstructor, setCocktailConstructor] = useState({});
-  const [newCocktail, setNewCocktail] = useState(storedCocktail);
 
   useEffect(() => {
-    localStorage.setItem('newCocktail', JSON.stringify(newCocktail));
+    const storedCocktails = JSON.parse(localStorage.getItem("newCocktail"));
+    if (storedCocktails) {
+      setNewCocktail(storedCocktails);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("newCocktail", JSON.stringify(newCocktail));
   }, [newCocktail]);
 
-  const storeInputData = () => {
+  const storeInputData = (event) => {
     event.preventDefault();
-    setNewCocktail((cocktailInput) => [...cocktailInput, cocktailConstructor]);
-    setCocktailConstructor({});
+
+    // Füge das neue Cocktail-Objekt zum State hinzu
+    setNewCocktail([...newCocktail, cocktailConstructor]);
+
+    // Leere die Eingabefelder
+    document
+      .querySelectorAll("form input, form textarea, form select")
+      .forEach((element) => {
+        element.value = "";
+      });
+    window.alert("Es wurde ein neues Rezept hinzugefügt");
   };
 
-  console.log(storedCocktail);
-
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setCocktailConstructor((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+  console.log(newCocktail);
   return (
-    <div className='add-recipe-wrapper'>
+    <div className="add-recipe-wrapper">
       <h3>Füge deine eigenen Getränke hinzu! </h3>
-      <section className='add-recipe'>
-        <form className='form-recipe'>
+      <section className="add-recipe">
+        <form className="form-recipe">
           <input
-            placeholder='Name'
-            type='text'
+            placeholder="Name"
+            name="name"
+            type="text"
             required
-            onChange={(e) => {
-              setCocktailConstructor((prev) => ({
-                ...prev,
-                name: e.target.value,
-              }));
-            }}
+            onChange={handleInputChange}
           />
-          <select
-            required
-            name='category'
-            onClick={(e) =>
-              setCocktailConstructor((prev) => ({
-                ...prev,
-                category: e.target.value,
-              }))
-            }
-          >
-            <option value=''>Wähle eine Kategorie</option>
-            <option value='Gin'>Gin</option>
-            <option value='Vodka'>Vodka</option>
-            <option value='Rum'>Rum</option>
-            <option value='Scotch'>Scotch</option>
-            <option value='Alkoholfrei'>Alkoholfrei</option>
+          <select required name="category" onChange={handleInputChange}>
+            <option value="">Wähle eine Kategorie</option>
+            <option value="Gin">Gin</option>
+            <option value="Vodka">Vodka</option>
+            <option value="Rum">Rum</option>
+            <option value="Scotch">Scotch</option>
+            <option value="Whiskey">Whiskey</option>
+            <option value="Tequilla">Tequilla</option>
+            <option value="Alkoholfrei">Alkoholfrei</option>
           </select>
           <input
-            type='text'
-            placeholder='Bild URL'
-            onChange={(e) =>
-              setCocktailConstructor((prev) => ({
-                ...prev,
-                imageURL: e.target.value,
-              }))
-            }
+            type="text"
+            placeholder="Bild URL"
+            name="URL"
+            onChange={handleInputChange}
           />
           <textarea
-            name='anleitung'
-            id='anleitung'
-            placeholder='Anleitung'
-            cols='30'
-            rows='10'
+            name="anleitung"
+            id="anleitung"
+            placeholder="Anleitung"
+            cols="30"
+            rows="10"
             required
-            onChange={(e) =>
-              setCocktailConstructor((prev) => ({
-                ...prev,
-                description: e.target.value,
-              }))
-            }
+            onChange={handleInputChange}
           ></textarea>
           <input
-            type='text'
-            placeholder='Zutat 1'
+            type="text"
+            placeholder="Zutat 1"
             required
-            onChange={(e) =>
-              setCocktailConstructor((prev) => ({
-                ...prev,
-                ingredientOne: e.target.value,
-              }))
-            }
+            onChange={handleInputChange}
+            name="Zutat1"
           />
           <input
-            type='text'
-            placeholder='Menge Zutat 1'
+            type="text"
+            placeholder="Menge Zutat 1"
             required
-            onChange={(e) =>
-              setCocktailConstructor((prev) => ({
-                ...prev,
-                amountIngredientOne: e.target.value,
-              }))
-            }
+            onChange={handleInputChange}
+            name="Menge1"
           />
           <input
-            type='text'
-            placeholder='Zutat 2'
-            onChange={(e) =>
-              setCocktailConstructor((prev) => ({
-                ...prev,
-                ingredientTwo: e.target.value,
-              }))
-            }
+            type="text"
+            placeholder="Zutat 2"
+            onChange={handleInputChange}
+            name="Zutat2"
           />
           <input
-            type='text'
-            placeholder='Menge Zutat 2'
-            onChange={(e) =>
-              setCocktailConstructor((prev) => ({
-                ...prev,
-                amountIngredientTwo: e.target.value,
-              }))
-            }
+            type="text"
+            placeholder="Menge Zutat 2"
+            onChange={handleInputChange}
+            name="Menge2"
           />
           <input
-            type='text'
-            placeholder='Zutat 3'
-            onChange={(e) =>
-              setCocktailConstructor((prev) => ({
-                ...prev,
-                ingredientThree: e.target.value,
-              }))
-            }
+            type="text"
+            placeholder="Zutat 3"
+            onChange={handleInputChange}
+            name="Zutat3"
           />
           <input
-            type='text'
-            placeholder='Menge Zutat 3'
-            onChange={(e) =>
-              setCocktailConstructor((prev) => ({
-                ...prev,
-                amountIngredientThree: e.target.value,
-              }))
-            }
+            type="text"
+            placeholder="Menge Zutat 3"
+            onChange={handleInputChange}
+            name="Menge3"
           />
-          <button onClick={() => storeInputData()}>Submit</button>
+          <button onClick={storeInputData}>Submit</button>
         </form>
-        <img src='/svg/cover.svg' alt='Drinks' />
+        <img src="/svg/cover.svg" alt="Drinks" />
       </section>
       <Footer />
     </div>
