@@ -29,7 +29,48 @@ const TypesPage = () => {
   return (
     <>
       <Header />
-
+      <section className='filter-grid' id='jump'>
+        <div className='filter background-1'>
+          <h2>Gin</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <img src='../../../public/svg/Gin.jpg' alt='' />
+        </div>
+        <div className='filter background-2'>
+          <h2>Vodka</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <img src='../../../public/svg/vodka.jpg' alt='' />
+        </div>
+        <div className='filter background-1'>
+          <h2>Gin</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <img src='../../../public/svg/Gin.jpg' alt='' />
+        </div>
+        <div className='filter background-2'>
+          <h2>Vodka</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <img src='../../../public/svg/vodka.jpg' alt='' />
+        </div>
+        <div className='filter background-1'>
+          <h2>Gin</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <img src='../../../public/svg/Gin.jpg' alt='' />
+        </div>
+        <div className='filter background-2'>
+          <h2>Vodka</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <img src='../../../public/svg/vodka.jpg' alt='' />
+        </div>
+        <div className='filter background-1'>
+          <h2>Gin</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <img src='../../../public/svg/Gin.jpg' alt='' />
+        </div>
+        <div className='filter background-2'>
+          <h2>Vodka</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <img src='../../../public/svg/vodka.jpg' alt='' />
+        </div>
+      </section>
       <Footer />
     </>
   );
