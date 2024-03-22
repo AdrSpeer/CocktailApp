@@ -1,9 +1,16 @@
+import { Link } from "react-router-dom";
 import ArrowScroll from "../../assets/svg/ArrowScroll";
 import Nav from "../Nav/Nav";
 import SearchBar from "../SearchBar/SearchBar";
 import "./Header.css";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
+  const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -20;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
+  };
   return (
     <header>
       <Nav />
@@ -20,7 +27,9 @@ const Header = () => {
         </div>
       </section>
       <div className="arrow-div">
-        <ArrowScroll />
+        <HashLink smooth scroll={(el) => scrollWithOffset(el)} to="/#jump">
+          <ArrowScroll />
+        </HashLink>
       </div>
     </header>
   );
