@@ -1,5 +1,6 @@
 import Header from "../../components/Header/Header";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import "./Home.css";
 import Footer from "../../components/Footer/Footer";
 
@@ -13,41 +14,41 @@ const Home = () => {
     <>
       <Header />
       <section className="filter-grid" id="jump">
-        <Link to={`/types/gin`}>
+        <HashLink to={`/types/gin#jump`}>
           <div className="filter background-1">
             <h2>Gin</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/Gin.jpg" alt="" />
           </div>
-        </Link>
-        <Link to={`/types/vodka`}>
+        </HashLink>
+        <HashLink to={`/types/vodka#jump`}>
           <div className="filter background-2">
             <h2>Vodka</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/vodka.jpg" alt="" />
           </div>
-        </Link>
-        <Link to={`/types/rum`}>
+        </HashLink>
+        <HashLink to={`/types/rum#jump`}>
           <div className="filter background-3">
             <h2>Rum</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/rum.jpg" alt="" />
           </div>
-        </Link>
-        <Link to={`/types/scotch`}>
+        </HashLink>
+        <HashLink to={`/types/scotch#jump`}>
           <div className="filter background-4">
             <h2>Scotch</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/scotch.jpg" alt="" />
           </div>
-        </Link>
-        <Link to={`/types/non-alcoholic`}>
+        </HashLink>
+        <HashLink to={`/types/non-alcoholic#jump`}>
           <div className="filter background-5">
             <h2>Alkoholfrei</h2>
             <p>Lorem ipsum dolor sit amet.</p>
             <img src="../../../public/svg/none.jpg" alt="" />
           </div>
-        </Link>
+        </HashLink>
         <div className="filter background-6" onClick={filler()}>
           <h2>Zufall</h2>
           <p>Lorem ipsum dolor sit amet.</p>
