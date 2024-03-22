@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 import Footer from "../../components/Footer/Footer";
 
+// fehlerbehebung dummy
+function filler() {
+  console.log("Filler");
+}
+
 const Home = () => {
   return (
     <>
@@ -43,7 +48,7 @@ const Home = () => {
             <img src="../../../public/svg/none.jpg" alt="" />
           </div>
         </Link>
-        <div className="filter background-6" onClick={"filler"}>
+        <div className="filter background-6" onClick={filler()}>
           <h2>Zufall</h2>
           <p>Lorem ipsum dolor sit amet.</p>
           <p className="question">?</p>
