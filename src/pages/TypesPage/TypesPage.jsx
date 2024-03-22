@@ -29,7 +29,7 @@ const TypesPage = () => {
   return (
     <>
       <Header />
-      <section className='filter-grid' id='jump'>
+      <section className='filter-grid' id='drinks'>
         <div className='filter background-1'>
           <h2>Gin</h2>
           <p>Lorem ipsum dolor sit amet.</p>
