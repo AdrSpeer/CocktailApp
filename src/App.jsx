@@ -11,13 +11,13 @@ import "./App.css";
 function App() {
   const [theme, setTheme] = useState("");
   const [pop, setPop] = useState(false);
-  const [drinkName, setDrinkName] = useState();
+  const [drinkId, setDrinkId] = useState(null);
   return (
     <div className="bg">
       <div className="wrapper">
         <ThemeContext.Provider value={{ theme, setTheme }}>
           <PopContext.Provider value={{ pop, setPop }}>
-            <DrinkContext.Provider value={{ drinkName, setDrinkName }}>
+            <DrinkContext.Provider value={{ drinkId, setDrinkId }}>
               <BrowserRouter>
                 <Routes>
                   <Route path="/" element={<Home />} />

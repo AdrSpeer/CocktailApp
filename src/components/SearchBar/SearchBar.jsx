@@ -10,7 +10,7 @@ const SearchBar = () => {
   const [drinks, setDrinks] = useState();
 
   const { pop, setPop } = useContext(PopContext);
-  const { drinkName, setDrinkName } = useContext(DrinkContext);
+  const { drinkId, setDrinkId } = useContext(DrinkContext);
 
   useEffect(() => {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchElement}`)
@@ -25,12 +25,17 @@ const SearchBar = () => {
       .catch((error) => console.log("Fetch Drinks", error));
   }, [searchElement]);
 
+  useEffect(() => {
+    setSearchElement("");
+  }, [drinkId]);
+
   const popToggle = (nameString) => {
-    setPop((popUp) => !popUp);
-    setDrinkName(nameString);
+    setPop(true);
+    setDrinkId(nameString);
   };
 
-  console.log(drinkName);
+  console.log(drinkId);
+  console.log(drinks);
 
   return (
     <>
@@ -39,7 +44,7 @@ const SearchBar = () => {
         <div className={searchElement.length > 0 ? "suggestions show" : "suggestions"}>
           {searchElement.length > 0
             ? drinks.drinks.map((drink, index) => (
-                <Link onClick={() => popToggle(drink.strDrink)} to={""} key={index} className="link-search">
+                <Link onClick={() => popToggle(drink.idDrink)} to={""} key={index} className="link-search">
                   <p className="drink-name">{drink.strDrink}</p>
                   <img src={drink.strDrinkThumb} alt="" />
                 </Link>

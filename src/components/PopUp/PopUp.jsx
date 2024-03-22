@@ -4,38 +4,40 @@ import { DrinkContext } from "../../context/Context";
 import { useContext, useEffect, useState } from "react";
 
 const PopUp = () => {
-  const [drinks, setDrinks] = useState();
+  const [drink, setDrink] = useState();
   const { pop, setPop } = useContext(PopContext);
-  const { drinkName, setDrinkName } = useContext(DrinkContext);
+  const { drinkId, setDrinkId } = useContext(DrinkContext);
   const popToggle = () => {
-    setPop((popUp) => !popUp);
+    setPop(false);
   };
 
   useEffect(() => {
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkName}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.drinks != null) {
-          setDrinks(data);
-        } else {
-          console.log("");
-        }
-      })
-      .catch((error) => console.log("Fetch Drinks", error));
-  }, [drinkName]);
+    drinkId != null
+      ? fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`)
+          .then((res) => res.json())
+          .then((data) => {
+            data.drinks != null ? setDrink(data) : console.log("");
+          })
+          .catch((error) => console.log("Fetch Drinks", error))
+      : "";
+  }, [drinkId]);
+
+  console.log(drink);
 
   return (
     <div className="pop-up">
       <button onClick={() => popToggle()}>Click</button>
       <div className={pop === true ? "pop pop-show" : "pop"}>
-        {drinks
-          ? drinks.drinks.map((drink, index) => (
-              <div key={index}>
-                {/* <p className="drink-name">{drink.strDrink}</p>
-                <img src={drink.strDrinkThumb} alt="" /> */}
-              </div>
-            ))
-          : ""}
+        {drink ? (
+          <div className={pop === true ? "drink-div" : "drink-div-hide"}>
+            <img className="drink-img" src={drink.drinks[0].strDrinkThumb} alt="" />
+            <div className="content-con">
+              <h4 className="drink-title">{drink.drinks[0].strDrink}</h4>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

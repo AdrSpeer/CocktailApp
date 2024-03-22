@@ -4,6 +4,7 @@
 }
 
 .input-hide {
+  /* pointer-events: none; */
   border-radius: 5px;
 }
 

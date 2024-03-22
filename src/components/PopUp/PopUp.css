@@ -1,5 +1,54 @@
+.pop-up {
+  position: relative;
+}
+
 .pop-show {
-  background-color: white;
-  width: 200px;
-  height: 20px;
+  width: 50%;
+  height: 70svh;
+  position: absolute;
+  background-color: var(--global--accent--Color);
+  z-index: 8;
+  top: 50%;
+  left: 20%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.drink-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 4px;
+  margin-left: 20px;
+}
+
+.content-con {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.drink-div-hide {
+  display: none;
+}
+
+.drink-div {
+  display: flex;
+  align-items: center;
+}
+
+.drink-title {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Playfair Display";
+}
+
+@media screen and (width <= 720px) {
+  .drink-div {
+    flex-direction: column;
+  }
+  .pop-show {
+    justify-content: center;
+    width: 80%;
+  }
 }
