@@ -27,8 +27,9 @@ const SearchBar = () => {
         <div className={searchElement.length > 0 ? "suggestions show" : "suggestions"}>
           {searchElement.length > 0
             ? drinks.drinks.map((drink, index) => (
-                <Link to={``} key={index}>
-                  <p>{drink.strDrink}</p>
+                <Link to={``} key={index} className="link-search">
+                  <p className="drink-name">{drink.strDrink}</p>
+                  <img src={drink.strDrinkThumb} alt="" />
                 </Link>
               ))
             : ""}
