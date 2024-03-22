@@ -1,4 +1,4 @@
-import './PopUp.css';
+import "./PopUp.css";
 
 const PopUp = () => {
   return <></>;

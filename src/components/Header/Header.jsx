@@ -1,3 +1,4 @@
+import ArrowScroll from "../../assets/svg/ArrowScroll";
 import Nav from "../Nav/Nav";
 import SearchBar from "../SearchBar/SearchBar";
 import "./Header.css";
@@ -18,6 +19,9 @@ const Header = () => {
           </div>
         </div>
       </section>
+      <div className="arrow-div">
+        <ArrowScroll />
+      </div>
     </header>
   );
 };

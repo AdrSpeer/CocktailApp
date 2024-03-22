@@ -1,5 +1,7 @@
+import "./Menu.css";
+
 const Menu = () => {
-  return <a href="">Menu</a>;
+  return <button>Menu</button>;
 };
 
 export default Menu;
