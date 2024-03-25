@@ -8,15 +8,13 @@ import scrollWithOffset from "../../functions/Functions";
 
 const Home = () => {
   const [randomCock, setRandomCock] = useState();
-
   useEffect(() => {
-    fetch(`www.thecocktaildb.com/api/json/v1/1/random.php`)
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
       .then((res) => res.json())
-      .then((data) => setRandomCock(data))
+      .then((data) => setRandomCock(data.drinks))
       .catch((error) => console.error("Fehler im Fetch Random", error));
   }, []);
-  console.log(setRandomCock);
-
+  console.log(randomCock);
   return (
     <>
       <Header />
