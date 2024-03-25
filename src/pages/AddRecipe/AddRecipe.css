@@ -14,6 +14,13 @@
   margin-bottom: 30px;
 }
 
+.add-recipe button {
+  background-color: #4d6479;
+  color: #ffe3e8;
+  border: none;
+  border-radius: 5px;
+}
+
 .add-recipe form {
   display: flex;
   flex-direction: column;
@@ -36,4 +43,45 @@ textarea {
 .add-recipe textarea::placeholder {
   text-align: left;
   color: black;
+}
+
+.show-form {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.hide-form {
+  display: none !important;
+}
+
+.hide-new-recipe {
+  display: none !important;
+}
+.added-new-recipe {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.added-new-recipe h3 {
+  font-size: 20px;
+}
+.added-new-recipe img {
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.show-recipe {
+  color: white;
+  display: flex;
+}
+
+.recipe-box {
+  background-color: rgb(126, 123, 123);
+  padding: 10px;
+}
+
+.img-center {
+  margin: auto;
+  height: 400px;
 }
