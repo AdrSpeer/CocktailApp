@@ -28,7 +28,7 @@ const TypesPage = () => {
     } catch (error) {
       console.error('Error auf der Details Page', error);
     } finally {
-      // setLoading(false);
+      setLoading(false);
     }
   };
 
