@@ -1,35 +1,35 @@
-import Header from '../../components/Header/Header';
-import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
-import './Home.css';
-import Footer from '../../components/Footer/Footer';
-import Up from '../../assets/svg/up';
+import Header from "../../components/Header/Header";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import "./Home.css";
+import Footer from "../../components/Footer/Footer";
+import Up from "../../assets/svg/up";
 
 // fehlerbehebung dummy
 function filler() {
-  console.log('Filler');
+  console.log("Filler");
 }
 
 const Home = () => {
   const scrollWithOffset = (el) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     const yOffset = -20;
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   };
   return (
     <>
       <Header />
       <Up />
-      <section className='filter-grid' id='drinks'>
+      <section className="filter-grid" id="drinks">
         <HashLink
           smooth
           scroll={(el) => scrollWithOffset(el)}
           to={`/types/gin#drinks`}
         >
-          <div className='filter background-1'>
+          <div className="filter background-1">
             <h2>Gin</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <img src='/svg/Gin.jpg' alt='' />
+            <p>Lorem, ipsum dolor.</p>
+            <img src="/svg/Gin.jpg" alt="" />
           </div>
         </HashLink>
         <HashLink
@@ -37,10 +37,10 @@ const Home = () => {
           scroll={(el) => scrollWithOffset(el)}
           to={`/types/vodka#drinks`}
         >
-          <div className='filter background-2'>
+          <div className="filter background-2">
             <h2>Vodka</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <img src='/svg/vodka.jpg' alt='' />
+            <p>Lorem, ipsum dolor.</p>
+            <img src="/svg/vodka.jpg" alt="" />
           </div>
         </HashLink>
         <HashLink
@@ -48,10 +48,10 @@ const Home = () => {
           scroll={(el) => scrollWithOffset(el)}
           to={`/types/rum#drinks`}
         >
-          <div className='filter background-3'>
+          <div className="filter background-3">
             <h2>Rum</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <img src='/svg/rum.jpg' alt='' />
+            <p>Lorem, ipsum dolor.</p>
+            <img src="/svg/rum.jpg" alt="" />
           </div>
         </HashLink>
         <HashLink
@@ -59,10 +59,10 @@ const Home = () => {
           scroll={(el) => scrollWithOffset(el)}
           to={`/types/scotch#drinks`}
         >
-          <div className='filter background-4'>
+          <div className="filter background-4">
             <h2>Scotch</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <img src='/svg/scotch.jpg' alt='' />
+            <p>Lorem, ipsum dolor.</p>
+            <img src="/svg/scotch.jpg" alt="" />
           </div>
         </HashLink>
         <HashLink
@@ -70,10 +70,10 @@ const Home = () => {
           scroll={(el) => scrollWithOffset(el)}
           to={`/types/scotch#drinks`}
         >
-          <div className='filter background-4'>
+          <div className="filter background-4">
             <h2>Tequila</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <img src='/svg/tequila.jpg' alt='' />
+            <p>Lorem, ipsum dolor.</p>
+            <img src="/svg/Tequila.jpg" alt="" />
           </div>
         </HashLink>
         <HashLink
@@ -81,10 +81,10 @@ const Home = () => {
           scroll={(el) => scrollWithOffset(el)}
           to={`/types/scotch#drinks`}
         >
-          <div className='filter background-4'>
+          <div className="filter background-4">
             <h2>Bourbon</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <img src='/svg/Bourbon.jpg' alt='' />
+            <p>Lorem, ipsum dolor.</p>
+            <img src="/svg/Bourbon.jpg" alt="" />
           </div>
         </HashLink>
         <HashLink
@@ -92,16 +92,16 @@ const Home = () => {
           scroll={(el) => scrollWithOffset(el)}
           to={`/types/non-alcoholic#drinks`}
         >
-          <div className='filter background-5'>
+          <div className="filter background-5">
             <h2>Alkoholfrei</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <img src='/svg/none.jpg' alt='' />
+            <p>Lorem, ipsum dolor.</p>
+            <img src="/svg/none.jpg" alt="" />
           </div>
         </HashLink>
-        <div className='filter background-6' onClick={filler()}>
+        <div className="filter background-6" onClick={filler()}>
           <h2>Zufall</h2>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p className='question'>?</p>
+          <p>Lorem, ipsum dolor.</p>
+          <p className="question">?</p>
         </div>
       </section>
 
