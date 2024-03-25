@@ -22,7 +22,7 @@
   position: relative;
 }
 .filter img {
-  width: 40%;
+  width: 220px;
   position: absolute;
   border-radius: 20px;
   right: 7%;
@@ -60,14 +60,11 @@
 .background-5 {
   background-color: #574b1f;
 }
-.background-5 img {
-  right: 3%;
-  width: 35%;
-}
+
 .background-6 {
   background-color: #28280b;
 }
-.background-6 .question {
+.box-question .question {
   font-size: 300px;
   position: absolute;
   right: 10%;
@@ -81,4 +78,30 @@
   left: 90%;
   margin-right: 10px;
   z-index: 10;
+}
+
+@media screen and (width <= 1350px) {
+  .filter-grid {
+    grid-template-columns: repeat(1, 90%);
+  }
+  .filter {
+    height: 22rem;
+    align-items: center;
+    padding-left: 0rem;
+  }
+  .filter img {
+    width: 230px;
+    position: static;
+  }
+  .background-2 .question {
+    font-size: 200px;
+    position: static;
+  }
+  .box-question {
+    flex-direction: row;
+  }
+  .filter h2 {
+    padding-bottom: 20px;
+    font-size: 40px;
+  }
 }
