@@ -40,3 +40,17 @@
   justify-content: center;
   position: relative;
 }
+
+@media screen and (width <= 1350px) {
+  .drink-grid {
+    grid-template-columns: repeat(1, 90%);
+  }
+  .filter h3 {
+    padding-bottom: 20px;
+    font-size: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 14ch;
+  }
+}
