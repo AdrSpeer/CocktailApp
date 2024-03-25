@@ -177,4 +177,7 @@ textarea {
   .add-recipe form {
     margin-bottom: 10px;
   }
+  .add-recipe-wrapper {
+    padding: 25px;
+  }
 }
