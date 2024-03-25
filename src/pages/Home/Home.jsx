@@ -1,16 +1,21 @@
 import Header from "../../components/Header/Header";
-import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import "./Home.css";
 import Footer from "../../components/Footer/Footer";
 import Up from "../../assets/svg/up";
-
-// fehlerbehebung dummy
-function filler() {
-  console.log("Filler");
-}
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [randomCock, setRandomCock] = useState();
+
+  useEffect(() => {
+    fetch(`www.thecocktaildb.com/api/json/v1/1/random.php`)
+      .then((res) => res.json())
+      .then((data) => setRandomCock(data))
+      .catch((error) => console.error("Fehler im Fetch Random", error));
+  }, []);
+  console.log(setRandomCock);
+
   const scrollWithOffset = (el) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     const yOffset = -20;
@@ -91,7 +96,10 @@ const Home = () => {
             <img src="/svg/none.jpg" alt="" />
           </div>
         </HashLink>
-        <div className="filter background-2 box-question" onClick={filler()}>
+        <div
+          className="filter background-2 box-question"
+          onClick={console.log("filler")}
+        >
           <h2>Zufall</h2>
           <p className="question">?</p>
         </div>

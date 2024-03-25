@@ -70,6 +70,9 @@
   right: 10%;
   transform: rotate(10deg);
 }
+.box-question {
+  cursor: pointer;
+}
 
 .up {
   width: 50px;
