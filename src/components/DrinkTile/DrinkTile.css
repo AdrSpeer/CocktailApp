@@ -30,3 +30,13 @@
     background: #28280b;
   }
 }
+
+.drink {
+  border-radius: 20px;
+  color: var(--global--accent--Color);
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}

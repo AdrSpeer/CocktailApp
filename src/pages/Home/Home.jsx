@@ -18,7 +18,7 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setRandomCock(data.drinks))
       .catch((error) => console.error('Fehler im Fetch Random', error));
-  }, [randomCock]);
+  }, []);
 
   const popToggle = (nameString) => {
     setPop(true);
