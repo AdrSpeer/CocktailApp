@@ -130,8 +130,8 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 40px;
+  align-items: flex-start;
+  gap: 20px;
 }
 .added-drink-head h4 {
   font-size: 20px;
