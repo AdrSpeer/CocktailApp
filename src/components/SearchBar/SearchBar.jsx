@@ -9,7 +9,7 @@ const SearchBar = () => {
   const [searchElement, setSearchElement] = useState("");
   const [drinks, setDrinks] = useState();
 
-  const { pop, setPop } = useContext(PopContext);
+  const { setPop } = useContext(PopContext);
   const { drinkId, setDrinkId } = useContext(DrinkContext);
 
   useEffect(() => {
