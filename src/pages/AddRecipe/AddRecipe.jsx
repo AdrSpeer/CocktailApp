@@ -1,10 +1,12 @@
 import Footer from "../../components/Footer/Footer";
 import "./AddRecipe.css";
-import { useState, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Nav from "../../components/Nav/Nav";
+import PopUpAdded from "../../components/PopUpAdded/PopUpAdded";
+import { PopContext } from "../../context/Context";
 
 const AddRecipe = () => {
   const storedCocktail = JSON.parse(localStorage.getItem("newCocktail"));
@@ -13,6 +15,7 @@ const AddRecipe = () => {
   const [hide, setHide] = useState(true);
   const [hideRecipe, setHideRecipe] = useState(true);
   const [newId, setNewId] = useState(1);
+  const { pop, setPop } = useContext(PopContext);
 
   // Searchbar
   const [searchInput, setSearchInput] = useState("");
@@ -26,7 +29,7 @@ const AddRecipe = () => {
   const storeInputData = (event) => {
     event.preventDefault();
     // Auslesen der Inputfelder beim Klicken des Submit-Buttons
-    const name = document.getElementById("name").value;
+    const name = document.getElementById("nameDrink").value;
     const category = document.getElementById("category").value;
     const URL = document.getElementById("URL").value;
     const anleitung = document.getElementById("anleitung").value;
@@ -121,10 +124,15 @@ const AddRecipe = () => {
   // Verwende entweder newCocktail oder filteredData zum Rendern der Drinks
   const drinksToRender = searchInput ? filteredData : newCocktail;
 
+  const popToggle = () => {
+    setPop(true);
+  };
+
   console.log("new Cocktail", newCocktail);
   return (
     <>
       <Nav />
+      <PopUpAdded />
       <div className="add-recipe-wrapper">
         <h3>Füge deine eigenen Getränke hinzu! </h3>
         <div className="show-form">
@@ -143,7 +151,7 @@ const AddRecipe = () => {
         </div>
         <section className="add-recipe">
           <form className={hide ? "form-recipe" : "hide-form"}>
-            <input placeholder="Name" id="name" type="text" required />
+            <input placeholder="Name" id="nameDrink" type="text" required />
             <select required id="category">
               <option value="">Wähle eine Kategorie</option>
               <option value="Gin">Gin</option>
@@ -210,7 +218,11 @@ const AddRecipe = () => {
         </div>
         <div className={hideRecipe ? "drink-grid-added" : "hide-new-recipe"}>
           {drinksToRender?.map((cocktail, id) => (
-            <div key={id} className="added-drink-box">
+            <div
+              key={id}
+              className="added-drink-box"
+              onClick={() => popToggle()}
+            >
               <article className="added-drink-head">
                 <h4>{cocktail.name} </h4>
                 <DeleteIcon
