@@ -34,9 +34,6 @@ const SearchBar = () => {
     setDrinkId(nameString);
   };
 
-  console.log(drinkId);
-  console.log(drinks);
-
   return (
     <>
       <input className={searchElement.length > 0 ? "input-show" : "input-hide"} type="text" placeholder="Suchen..." onChange={(event) => setSearchElement(event.target.value)} value={searchElement} />

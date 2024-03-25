@@ -1,3 +1,7 @@
+.pop-dad {
+  position: relative;
+}
+
 header button {
   color: #ffe3e8;
   text-transform: uppercase;
@@ -5,4 +9,42 @@ header button {
   font-weight: 600;
   background-color: unset;
   border: none;
+}
+
+.menu-btn {
+  cursor: pointer;
+  z-index: 12;
+}
+
+.menu-btn:hover {
+  scale: 1.05;
+}
+
+.menu-cross {
+  width: 15px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.menu-cross:hover {
+  scale: 1.05;
+}
+
+.menu-div {
+  position: relative;
+}
+
+.menu-pop {
+  display: none;
+}
+.menu-pop-show {
+  width: 110px;
+  height: 150px;
+  background-color: var(--global--accent--Color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 4px;
+  transition: 0.5s;
 }

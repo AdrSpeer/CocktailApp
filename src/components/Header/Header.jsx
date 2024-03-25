@@ -24,7 +24,7 @@ const Header = () => {
             <SearchBar />
           </div>
           <div className="img-con">
-            <img src="/svg/cover.svg" alt="" />
+            <img src="/svg/cover.png" alt="" />
           </div>
         </div>
       </section>
