@@ -137,7 +137,7 @@ const AddRecipe = () => {
           <button onClick={storeInputData}>Submit</button>
         </form>
         <img
-          src="/svg/cover.svg"
+          src="/svg/cover.png"
           alt="Drinks"
           className={hide ? "" : "img-center"}
         />
