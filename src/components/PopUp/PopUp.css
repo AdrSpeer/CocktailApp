@@ -7,8 +7,10 @@
   width: 50%;
   min-height: 60svh;
   background-color: var(--global--accent--Color);
+  color: black;
   top: 15svh;
-  left: 30%;
+  left: 28vw;
+
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -68,29 +70,20 @@
   margin-bottom: 5px;
 }
 
-/* @media screen and (width <= 900px) {
+@media screen and (width <= 900px) {
   .drink-div {
     flex-direction: column;
   }
   .pop-show {
     justify-content: center;
-    width: 60%;
+    width: 65%;
     left: 20%;
   }
   .drink-img {
     margin-left: 0;
     margin-top: 20px;
-    width: 250px;
-    height: 250px;
   }
   .content-con {
     padding-inline: 15%;
   }
 }
-
-@media screen and (width <= 500px) {
-  .pop-show {
-    width: 82%;
-    left: 10%;
-  }
-} */

@@ -39,12 +39,33 @@ nav button {
   display: none;
 }
 .menu-pop-show {
-  width: 110px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   background-color: var(--global--accent--Color);
   position: absolute;
   top: 0;
   right: 0;
   border-radius: 4px;
   transition: 0.5s;
+  padding: 10px;
+  overflow: scroll;
+}
+
+.menu-pop-show a {
+  text-decoration: none;
+  color: black;
+  font-family: "Source Serif 4";
+}
+
+.menu-pop-show a:hover {
+  color: rgb(142, 124, 142);
+  scale: 1.05;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(142, 124, 142);
+  border-radius: 10px;
+  margin-block: 5px;
 }
