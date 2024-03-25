@@ -4,6 +4,7 @@ import "./Home.css";
 import Footer from "../../components/Footer/Footer";
 import Up from "../../assets/svg/up";
 import { useEffect, useState } from "react";
+import scrollWithOffset from "../../functions/Functions";
 
 const Home = () => {
   const [randomCock, setRandomCock] = useState();
@@ -16,11 +17,6 @@ const Home = () => {
   }, []);
   console.log(setRandomCock);
 
-  const scrollWithOffset = (el) => {
-    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    const yOffset = -20;
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
-  };
   return (
     <>
       <Header />

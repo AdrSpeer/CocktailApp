@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 const PopUp = () => {
   const [drink, setDrink] = useState();
   const { pop, setPop } = useContext(PopContext);
-  const { drinkId, setDrinkId } = useContext(DrinkContext);
+  const { drinkId } = useContext(DrinkContext);
   const { closePop } = useParams();
 
   const popToggle = () => {

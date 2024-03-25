@@ -111,13 +111,13 @@ li {
   text-wrap: pretty;
 }
 
-/* smoth scroll-behavior for all sizes */
+/* smooth scroll-behavior for all sizes */
 /* (for reference: https://tinyurl.com/simplyreset) */
 @media (prefers-reduced-motion: no-preference) {
   :has(:target) {
     scroll-behavior: smooth;
-    /* optional: lets a little bit of space after scroling to target
+    /* optional: lets a little bit of space after scrolling to target
     & also prevents content from getting under a 'sticky' header. */
-    scroll-padding-top: 6rem;
+    /* scroll-padding-top: 6rem; */
   }
 }
