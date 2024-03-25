@@ -25,7 +25,6 @@ const Home = () => {
     setDrinkId(nameString);
   };
 
-  console.log(randomCock);
   return (
     <>
       <Header />

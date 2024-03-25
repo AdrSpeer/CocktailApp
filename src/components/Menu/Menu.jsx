@@ -9,7 +9,6 @@ const Menu = () => {
   const popToggle = () => {
     setMenuPop((pop) => !pop);
   };
-  console.log(menuPop);
   return (
     <div className='pop-dad'>
       <button
