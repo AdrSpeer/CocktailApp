@@ -7,6 +7,7 @@ import Home from './pages/Home/Home';
 import AddRecipe from './pages/AddRecipe/AddRecipe';
 import TypesPage from './pages/TypesPage/TypesPage';
 import './App.css';
+import LoadingPage from './pages/LoadingPage/LoadingPage';
 
 function App() {
   const [theme, setTheme] = useState('');
@@ -17,12 +18,14 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(!loading);
-    }, 3000);
+    }, 200000);
   }, []);
 
   console.log(loading);
 
-  return (
+  return loading ? (
+    <LoadingPage />
+  ) : (
     <div className='bg'>
       <div className='wrapper'>
         <ThemeContext.Provider value={{ theme, setTheme }}>
