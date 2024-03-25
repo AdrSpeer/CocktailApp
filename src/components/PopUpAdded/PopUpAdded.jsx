@@ -17,8 +17,8 @@ const PopUpAdded = (props) => {
     setPop(false);
   }, [closePop]);
 
-  let ingridients = [];
-  //   const getIngridients = () => {
+  let ingredients = [];
+  //   const getIngredients = () => {
   //     for (let item in drink.drinks[0]) {
   //       if (item.includes("strIngredient")) {
   //         if (
@@ -26,12 +26,12 @@ const PopUpAdded = (props) => {
   //           drink.drinks[0][item] === ""
   //         ) {
   //         } else {
-  //           ingridients.push(drink.drinks[0][item]);
+  //           ingredients.push(drink.drinks[0][item]);
   //         }
   //       }
   //     }
   //   };
-  //   drink ? getIngridients() : "";
+  //   drink ? getIngredients() : "";
 
   return (
     <div className='pop-up'>
@@ -52,10 +52,10 @@ const PopUpAdded = (props) => {
             <div className='content-con'>
               {/* <h4 className="pop-h4">{drink.drinks[0].strDrink}</h4>
               <h5 className="pop-h5">Ingredients</h5>
-              {ingridients.length !== 0
-                ? ingridients.map((ingridient, index) => (
+              {ingredients.length !== 0
+                ? ingredients.map((ingredient, index) => (
                     <p className="pop-p" key={index}>
-                      {ingridient}
+                      {ingredient}
                     </p>
                   ))
                 : ""} */}
