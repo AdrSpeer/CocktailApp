@@ -44,7 +44,7 @@ const PopUp = () => {
 
   return (
     <div className="pop-up">
-      <div className={pop === true ? "pop pop-show" : "pop"}>
+      <div className={pop === true ? "pop pop-show loader-pop" : "pop"}>
         {drink ? (
           <div className={pop === true ? "drink-div" : "drink-div-hide"}>
             <img onClick={() => popToggle()} className="back-cross" src="/svg/Cross.svg" alt="" />

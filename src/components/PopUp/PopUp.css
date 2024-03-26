@@ -1,3 +1,10 @@
+.loader-pop {
+  animation: fadein 0.7s;
+  -moz-animation: fadein 0.7s; /* Firefox */
+  -webkit-animation: fadein 0.7s; /* Safari and Chrome */
+  -o-animation: fadein 0.7s; /* Opera */
+}
+
 .pop-up {
   width: 100%;
   position: fixed;
