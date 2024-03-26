@@ -263,4 +263,7 @@ textarea {
   .add-recipe-wrapper {
     padding: 25px;
   }
+  .add-recipe {
+    justify-content: center;
+  }
 }
