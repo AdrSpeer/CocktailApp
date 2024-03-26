@@ -7,15 +7,6 @@ import { useEffect, useState, useContext } from "react";
 import globalFunctions from "../../functions/GlobalFunctions";
 import { DrinkContext } from "../../context/Context";
 import { PopContext } from "../../context/Context";
-import Header from "../../components/Header/Header";
-import { HashLink } from "react-router-hash-link";
-import "./Home.css";
-import Footer from "../../components/Footer/Footer";
-import Up from "../../assets/svg/up";
-import { useEffect, useState, useContext } from "react";
-import globalFunctions from "../../functions/GlobalFunctions";
-import { DrinkContext } from "../../context/Context";
-import { PopContext } from "../../context/Context";
 
 const Home = () => {
   const [toggleRadom, setToggleRadom] = useState();
