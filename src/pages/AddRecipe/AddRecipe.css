@@ -177,7 +177,7 @@ textarea {
 .add-pop-up {
   position: fixed;
   z-index: 99;
-  left: 50%;
+  left: 40%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
