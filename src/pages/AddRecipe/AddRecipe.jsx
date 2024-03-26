@@ -5,8 +5,6 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Nav from "../../components/Nav/Nav";
-import PopUpAdded from "../../components/PopUpAdded/PopUpAdded";
-import { PopContext } from "../../context/Context";
 
 const AddRecipe = () => {
   const storedCocktail = JSON.parse(localStorage.getItem("newCocktail"));
@@ -14,9 +12,9 @@ const AddRecipe = () => {
   const [newCocktail, setNewCocktail] = useState(storedCocktail);
   const [hide, setHide] = useState(true);
   const [hideRecipe, setHideRecipe] = useState(true);
-  const [newId, setNewId] = useState(1);
-  const { pop, setPop } = useContext(PopContext);
-
+  const [newId, setNewId] = useState();
+  // const [showPopUp, setShowPopUp] = useState(false);
+  const [selectedCocktail, setSelectedCocktail] = useState(null);
   // Searchbar
   const [searchInput, setSearchInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
@@ -60,7 +58,7 @@ const AddRecipe = () => {
     setNewCocktail([
       ...newCocktail,
       {
-        id: newId,
+        id: new Date(),
         name,
         category,
         URL,
@@ -90,7 +88,7 @@ const AddRecipe = () => {
     console.log("stored cocktails", storedCocktail);
 
     const updatedLocalStorage = [...newCocktail].filter((cocktail) => {
-      return cocktail.id !== parseInt(itemToDelete.id);
+      return String(cocktail.id) !== String(itemToDelete.id);
     });
     console.log("updated", updatedLocalStorage);
 
@@ -124,15 +122,10 @@ const AddRecipe = () => {
   // Verwende entweder newCocktail oder filteredData zum Rendern der Drinks
   const drinksToRender = searchInput ? filteredData : newCocktail;
 
-  const popToggle = () => {
-    setPop(true);
-  };
-
   console.log("new Cocktail", newCocktail);
   return (
     <>
       <Nav />
-      <PopUpAdded />
       <div className="add-recipe-wrapper">
         <h3>Füge deine eigenen Getränke hinzu! </h3>
         <div className="show-form">
@@ -216,13 +209,10 @@ const AddRecipe = () => {
             className={hideRecipe ? "input-show-add" : "hide-new-recipe"}
           />
         </div>
+
         <div className={hideRecipe ? "drink-grid-added" : "hide-new-recipe"}>
           {drinksToRender?.map((cocktail, id) => (
-            <div
-              key={id}
-              className="added-drink-box"
-              onClick={() => popToggle()}
-            >
+            <div key={id} className="added-drink-box">
               <article className="added-drink-head">
                 <h4>{cocktail.name} </h4>
                 <DeleteIcon
@@ -232,9 +222,49 @@ const AddRecipe = () => {
                   }}
                 />
               </article>
-              <img src={cocktail.URL} alt={cocktail.name} />
+              <img
+                src={cocktail.URL}
+                alt={cocktail.name}
+                onClick={() => setSelectedCocktail(cocktail)}
+              />
             </div>
           ))}
+        </div>
+        <div className="pop-add-wrapper">
+          {selectedCocktail && (
+            <div className="add-pop-up">
+              <div className="pop-show pop">
+                <div className="drink-div">
+                  <img
+                    onClick={() => setSelectedCocktail(null)}
+                    className="back-cross"
+                    src="../../../public/svg/Cross.svg"
+                    alt=""
+                  />
+                  <img
+                    className="drink-img"
+                    src={selectedCocktail.URL}
+                    alt=""
+                  />
+                  <div className="content-con">
+                    <h4 className="pop-h4">{selectedCocktail.name}</h4>
+                    <h5 className="pop-h5">Zutaten</h5>
+                    <p className="pop-p">
+                      {selectedCocktail.Menge1} {selectedCocktail.Zutat1}
+                    </p>
+                    <p className="pop-p">
+                      {selectedCocktail.Menge2} {selectedCocktail.Zutat2}
+                    </p>
+                    <p className="pop-p">
+                      {selectedCocktail.Menge3} {selectedCocktail.Zutat3}
+                    </p>
+                    <h5 className="pop-h5">Anleitung</h5>
+                    <p className="pop-p">{selectedCocktail.anleitung}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
         <Footer />
       </div>
