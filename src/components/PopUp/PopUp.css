@@ -4,14 +4,14 @@
 }
 
 .pop-show {
-  width: 50%;
-  height: 400px;
+  width: 70%;
+  height: 500px;
   background-color: var(--global--accent--Color);
   color: black;
   top: 15svh;
   left: 10vw;
   overflow: scroll;
-  border-radius: 4px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   position: relative;
@@ -20,6 +20,7 @@
 .back-cross {
   width: 20px;
   position: sticky;
+  align-self: flex-start;
   top: 10px;
   left: 100%;
   cursor: pointer;
@@ -33,7 +34,7 @@
 .drink-img {
   width: 50%;
   height: 50%;
-  border-radius: 4px;
+  border-radius: 20px;
   margin-left: 20px;
   object-fit: cover;
 }
