@@ -37,13 +37,13 @@ const TypesPage = () => {
   }, [type]);
 
   return (
-    <>
+    <div className='home-loader'>
       <Header />
       <ErrorBoundary>
         <DrinkTile props={allDrinks} loading={loading} />
       </ErrorBoundary>
       <Footer />
-    </>
+    </div>
   );
 };
 
