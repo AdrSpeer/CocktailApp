@@ -75,7 +75,7 @@ const Home = () => {
         <HashLink
           smooth
           scroll={(el) => globalFunctions.scrollWithOffset(el)}
-          to={`/types/scotch#drinks`}
+          to={`/types/tequila#drinks`}
         >
           <div className="filter background-5">
             <h2>Tequila</h2>
@@ -85,7 +85,7 @@ const Home = () => {
         <HashLink
           smooth
           scroll={(el) => globalFunctions.scrollWithOffset(el)}
-          to={`/types/scotch#drinks`}
+          to={`/types/bourbon#drinks`}
         >
           <div className="filter background-6">
             <h2>Bourbon</h2>
