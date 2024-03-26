@@ -1,6 +1,8 @@
 .pop-up {
+  width: 100%;
   position: fixed;
   z-index: 15;
+  margin-inline: auto;
 }
 
 .pop-show {
@@ -9,11 +11,13 @@
   background-color: var(--global--accent--Color);
   color: black;
   top: 15svh;
-  left: 10vw;
-  overflow: scroll;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   border-radius: 20px;
   display: flex;
-  align-items: center;
   position: relative;
 }
 
@@ -40,7 +44,7 @@
 }
 
 .content-con {
-  padding: 5%;
+  padding: 40px;
   display: flex;
   flex-direction: column;
 }
@@ -56,13 +60,13 @@
 
 .pop-h4,
 .pop-h4 {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: bold;
   font-family: "Playfair Display";
-  margin-bottom: 20px;
+  margin-block: 40px 15px;
 }
 .pop-h5 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   font-family: "Playfair Display";
   margin-bottom: 10px;
@@ -78,14 +82,17 @@
   }
   .pop-show {
     justify-content: center;
-    width: 65%;
-    left: 30%;
+    width: 85%;
   }
+
+  .pop-h4 {
+    margin-block: 15px;
+  }
+
   .drink-img {
-    margin-left: 0;
-    margin-top: 240px;
+    margin: 20px 0 0 0;
   }
   .content-con {
-    padding-inline: 15%;
+    padding: 5px 25px;
   }
 }
