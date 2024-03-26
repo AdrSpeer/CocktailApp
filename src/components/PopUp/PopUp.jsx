@@ -42,6 +42,32 @@ const PopUp = () => {
   };
   drink ? getIngredients() : "";
 
+  let measures = [];
+  const getMeasures = () => {
+    for (let item in drink.drinks[0]) {
+      if (item.includes("strMeasure")) {
+        if (typeof drink.drinks[0][item] != "string" || drink.drinks[0][item] === "") {
+        } else {
+          measures.push(drink.drinks[0][item]);
+        }
+      }
+    }
+  };
+  drink ? getMeasures() : "";
+
+  console.log(drink);
+  console.log(ingredients);
+  console.log(measures);
+
+  let combinedArray = [];
+
+  for (let i = 0; i < ingredients.length; i++) {
+    let measure = i < measures.length ? measures[i] : ""; // Check if a measure exists
+    combinedArray.push(ingredients[i] + " " + measure);
+  }
+
+  console.log(combinedArray);
+
   return (
     <div className="pop-up">
       <div className={pop === true ? "pop pop-show loader-pop" : "pop"}>
@@ -52,8 +78,8 @@ const PopUp = () => {
             <div className="content-con">
               <h4 className="pop-h4">{drink.drinks[0].strDrink}</h4>
               <h5 className="pop-h5">Ingredients</h5>
-              {ingredients.length !== 0
-                ? ingredients.map((ingredient, index) => (
+              {combinedArray.length !== 0
+                ? combinedArray.map((ingredient, index) => (
                     <p className="pop-p" key={index}>
                       {ingredient}
                     </p>

@@ -1,11 +1,13 @@
 .input-show {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  color: black;
 }
 
 .input-hide {
   /* pointer-events: none; */
   border-radius: 5px;
+  color: black;
 }
 
 .suggestions {

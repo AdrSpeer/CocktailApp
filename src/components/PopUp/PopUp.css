@@ -22,10 +22,14 @@
   right: 0;
   margin-inline: auto;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   border-radius: 20px;
   display: flex;
   position: relative;
+}
+
+.pop-show::-webkit-scrollbar {
+  display: none;
 }
 
 .back-cross {
@@ -70,7 +74,7 @@
   font-size: 22px;
   font-weight: bold;
   font-family: "Playfair Display";
-  margin-block: 40px 15px;
+  margin-block: 15px 15px;
 }
 .pop-h5 {
   font-size: 16px;
@@ -93,10 +97,15 @@
   }
 
   .pop-h4 {
-    margin-block: 15px;
+    margin-block: 15px 10px;
   }
 
   .content-con {
     padding: 5px 35px;
+  }
+}
+@media screen and (width >= 1440px) {
+  .pop-up {
+    width: 1440px;
   }
 }
