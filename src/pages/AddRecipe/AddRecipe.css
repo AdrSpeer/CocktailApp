@@ -163,22 +163,32 @@ textarea {
   }
 }
 
-/* .pop-add {
-  display: none;
-}
-
-.pop-up-add {
-  position: absolute;
-  top: 20;
-  left: 20;
-} */
-
-/* ! to change */
-
 .add-pop-up {
   position: fixed;
   z-index: 99;
-  left: 40%;
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* * Media Queries */
+@media screen and (max-width: 1350px) {
+  .img-desk {
+    display: none;
+  }
+  .drink-grid-added {
+    grid-template-columns: 1fr;
+  }
+  .img-center {
+    display: none;
+  }
+  .add-recipe form {
+    margin-bottom: 10px;
+  }
+  .add-recipe-wrapper {
+    padding: 25px;
+  }
+  .add-recipe {
+    justify-content: center;
+  }
 }

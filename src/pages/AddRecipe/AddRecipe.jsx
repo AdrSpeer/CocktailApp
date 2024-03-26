@@ -10,7 +10,7 @@ const AddRecipe = () => {
   // storedCocktail abfragen, sind daten vorhanden? Nein, dann leeres Array
   let storedCocktail = JSON.parse(localStorage.getItem('newCocktail'));
   const [cocktailConstructor, setCocktailConstructor] = useState({});
-  const [newCocktail, setNewCocktail] = useState(storedCocktail);
+  const [newCocktail, setNewCocktail] = useState([]);
   const [hide, setHide] = useState(true);
   const [hideRecipe, setHideRecipe] = useState(true);
   const [newId, setNewId] = useState();
@@ -21,13 +21,12 @@ const AddRecipe = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [placeholderVisible, setPlaceholderVisible] = useState(true);
 
+  console.log("stored Cocktail", storedCocktail);
+  console.log("newCocktail", newCocktail);
   useEffect(() => {
-    if (storedCocktail === null) {
-      setNewCocktail(storedCocktail);
-    }
+    if (storedCocktail?.length > 0) setNewCocktail(storedCocktail);
   }, []);
 
-  console.log(storedCocktail);
   useEffect(() => {
     localStorage.setItem('newCocktail', JSON.stringify(newCocktail));
   }, [newCocktail]);
@@ -79,7 +78,6 @@ const AddRecipe = () => {
         Zutat3,
         Menge3
       },
-      ,
     ]);
 
     // Leere die Eingabefelder
@@ -88,9 +86,9 @@ const AddRecipe = () => {
       .forEach((element) => {
         element.value = '';
       });
-    setCocktailConstructor({});
-    window.alert('Es wurde ein neues Rezept hinzugefügt');
-    setNewId(newId + 1);
+    // setCocktailConstructor({});
+    window.alert("Es wurde ein neues Rezept hinzugefügt");
+    // setNewId(newId + 1);
   };
 
   const deleteStorageItem = (itemToDelete) => {
@@ -130,6 +128,7 @@ const AddRecipe = () => {
   };
 
   // Verwende entweder newCocktail oder filteredData zum Rendern der Drinks
+  // #1 changes new Cocktail
   const drinksToRender = searchInput ? filteredData : newCocktail;
 
   console.log('new Cocktail', newCocktail);
@@ -275,9 +274,9 @@ const AddRecipe = () => {
             </div>
           )}
         </div>
-        <Footer />
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
