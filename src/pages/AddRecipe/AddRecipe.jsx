@@ -1,13 +1,13 @@
 import Footer from '../../components/Footer/Footer';
 import './AddRecipe.css';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Nav from '../../components/Nav/Nav';
 
 const AddRecipe = () => {
-  // storedCocktail abfragen, sind daten vorhanden? Nein, dann leeres Array
+  // storedCocktail abfragen, sind Daten vorhanden? Nein, dann leeres Array
   let storedCocktail = JSON.parse(localStorage.getItem('newCocktail'));
   const [cocktailConstructor, setCocktailConstructor] = useState({});
   const [newCocktail, setNewCocktail] = useState([]);
@@ -16,11 +16,11 @@ const AddRecipe = () => {
   const [newId, setNewId] = useState();
   // const [showPopUp, setShowPopUp] = useState(false);
   const [selectedCocktail, setSelectedCocktail] = useState(null);
-  // Searchbar
+  // Search Bar
   const [searchInput, setSearchInput] = useState('');
   const [filteredData, setFilteredData] = useState([]);
   const [placeholderVisible, setPlaceholderVisible] = useState(true);
-  // -------------------------------------------------------
+  // ------------------- Alerts ---------------------------------------
   const recipeAlert = document.getElementById('alert-red');
 
   const recipeAlertGreen = document.getElementById('alert-green');
@@ -43,9 +43,7 @@ const AddRecipe = () => {
   const textNodeRecipeInput = document.createTextNode(
     'Es wurde ein neues Rezept hinzugefügt!'
   );
-  // -------------------------------------------------------
-  console.log('stored Cocktail', storedCocktail);
-  console.log('newCocktail', newCocktail);
+  // -----------------------------------------------------------------
   useEffect(() => {
     if (storedCocktail?.length > 0) setNewCocktail(storedCocktail);
   }, []);
@@ -123,13 +121,9 @@ const AddRecipe = () => {
   };
 
   const deleteStorageItem = (itemToDelete) => {
-    console.log('item to delete', itemToDelete);
-    console.log('stored cocktails', storedCocktail);
-
     const updatedLocalStorage = [...newCocktail].filter((cocktail) => {
       return String(cocktail?.id) !== String(itemToDelete?.id);
     });
-    console.log('updated', updatedLocalStorage);
 
     localStorage.setItem('newCocktail', JSON.stringify(updatedLocalStorage));
     setNewCocktail(updatedLocalStorage);
@@ -162,7 +156,6 @@ const AddRecipe = () => {
   // #1 changes new Cocktail
   const drinksToRender = searchInput ? filteredData : newCocktail;
 
-  console.log('new Cocktail', newCocktail);
   return (
     <div className='home-loader'>
       <Nav />

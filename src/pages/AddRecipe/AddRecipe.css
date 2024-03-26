@@ -8,6 +8,7 @@
 
 .form-wrapper {
   width: 100%;
+  flex: 1;
 }
 
 .add-recipe {
@@ -190,7 +191,7 @@ textarea {
     display: none;
   }
   .drink-grid-added {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 100%);
   }
   .img-center {
     display: none;
