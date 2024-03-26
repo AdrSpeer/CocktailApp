@@ -23,7 +23,7 @@ const AddRecipe = () => {
 
   useEffect(() => {
     if (storedCocktail === null) {
-      storedCocktail = [newCocktail];
+      setNewCocktail(storedCocktail);
     }
   }, []);
 
