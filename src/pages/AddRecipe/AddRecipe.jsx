@@ -7,7 +7,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Nav from "../../components/Nav/Nav";
 
 const AddRecipe = () => {
-  const storedCocktail = JSON.parse(localStorage.getItem("newCocktail"));
+  // storedCocktail abfragen, sind daten vorhanden? Nein, dann leeres Array
+  let storedCocktail = JSON.parse(localStorage.getItem("newCocktail"));
   const [cocktailConstructor, setCocktailConstructor] = useState({});
   const [newCocktail, setNewCocktail] = useState(storedCocktail);
   const [hide, setHide] = useState(true);
@@ -20,6 +21,13 @@ const AddRecipe = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [placeholderVisible, setPlaceholderVisible] = useState(true);
 
+  useEffect(() => {
+    if (storedCocktail === null) {
+      storedCocktail = [newCocktail];
+    }
+  }, []);
+
+  console.log(storedCocktail);
   useEffect(() => {
     localStorage.setItem("newCocktail", JSON.stringify(newCocktail));
   }, [newCocktail]);
@@ -57,6 +65,7 @@ const AddRecipe = () => {
     // Füge das neue Cocktail-Objekt zum State hinzu
     setNewCocktail([
       ...newCocktail,
+
       {
         id: new Date(),
         name,
@@ -70,6 +79,7 @@ const AddRecipe = () => {
         Zutat3,
         Menge3,
       },
+      ,
     ]);
 
     // Leere die Eingabefelder
@@ -88,7 +98,7 @@ const AddRecipe = () => {
     console.log("stored cocktails", storedCocktail);
 
     const updatedLocalStorage = [...newCocktail].filter((cocktail) => {
-      return String(cocktail.id) !== String(itemToDelete.id);
+      return String(cocktail?.id) !== String(itemToDelete?.id);
     });
     console.log("updated", updatedLocalStorage);
 
@@ -214,7 +224,7 @@ const AddRecipe = () => {
           {drinksToRender?.map((cocktail, id) => (
             <div key={id} className="added-drink-box">
               <article className="added-drink-head">
-                <h4>{cocktail.name} </h4>
+                <h4>{cocktail?.name} </h4>
                 <DeleteIcon
                   style={{ color: "white" }}
                   onClick={() => {
@@ -223,8 +233,8 @@ const AddRecipe = () => {
                 />
               </article>
               <img
-                src={cocktail.URL}
-                alt={cocktail.name}
+                src={cocktail?.URL}
+                alt={cocktail?.name}
                 onClick={() => setSelectedCocktail(cocktail)}
               />
             </div>
@@ -243,14 +253,14 @@ const AddRecipe = () => {
                   />
                   <img
                     className="drink-img"
-                    src={selectedCocktail.URL}
+                    src={selectedCocktail?.URL}
                     alt=""
                   />
                   <div className="content-con">
-                    <h4 className="pop-h4">{selectedCocktail.name}</h4>
+                    <h4 className="pop-h4">{selectedCocktail?.name}</h4>
                     <h5 className="pop-h5">Zutaten</h5>
                     <p className="pop-p">
-                      {selectedCocktail.Menge1} {selectedCocktail.Zutat1}
+                      {selectedCocktail.Menge1} {selectedCocktail?.Zutat1}
                     </p>
                     <p className="pop-p">
                       {selectedCocktail.Menge2} {selectedCocktail.Zutat2}
