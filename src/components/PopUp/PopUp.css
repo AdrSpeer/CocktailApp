@@ -5,12 +5,12 @@
 
 .pop-show {
   width: 50%;
-  min-height: 60svh;
+  height: 400px;
   background-color: var(--global--accent--Color);
   color: black;
   top: 15svh;
-  left: 28vw;
-
+  left: 10vw;
+  overflow: scroll;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -19,10 +19,11 @@
 
 .back-cross {
   width: 20px;
-  position: absolute;
+  position: sticky;
   top: 10px;
-  right: 10px;
+  left: 100%;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .back-cross:hover {
@@ -77,11 +78,11 @@
   .pop-show {
     justify-content: center;
     width: 65%;
-    left: 20%;
+    left: 30%;
   }
   .drink-img {
     margin-left: 0;
-    margin-top: 20px;
+    margin-top: 240px;
   }
   .content-con {
     padding-inline: 15%;
