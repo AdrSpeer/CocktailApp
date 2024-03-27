@@ -273,6 +273,7 @@ const AddRecipe = () => {
                 />
               </article>
               <img
+                className="added-drink-img"
                 src={cocktail?.URL}
                 alt={cocktail?.name}
                 onClick={() => setSelectedCocktail(cocktail)}
