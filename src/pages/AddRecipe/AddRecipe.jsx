@@ -266,7 +266,7 @@ const AddRecipe = () => {
               <article className="added-drink-head">
                 <h4 style={{ color: "#ffe3e8" }}>{cocktail?.name} </h4>
                 <DeleteIcon
-                  style={{ color: "white" }}
+                  style={{ color: "#ffe3e8" }}
                   onClick={() => {
                     deleteStorageItem(cocktail);
                   }}
