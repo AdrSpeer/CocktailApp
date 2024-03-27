@@ -15,30 +15,17 @@ const Header = () => {
         <div className="hero-con">
           <div className="text-con">
             <h1>Cocktails & Chill!</h1>
-            <p className="hero-p">
-              Herzlich Willkommen in der Welt von Cocktails and Chill!
-            </p>
+            <p className="hero-p">Herzlich Willkommen in der Welt von Cocktails and Chill!</p>
             <SearchBar />
           </div>
           <div className="img-con">
-            <img src="/svg/cover.png" alt="" />
+            <img src={theme ? "../../../public/svg/cover-dark.png" : "../../../public/svg/cover-light.png"} alt="" />
           </div>
         </div>
       </section>
       <div className="arrow-div">
-        <HashLink
-          smooth
-          scroll={(el) => globalFunctions.scrollWithOffset(el)}
-          to="#drinks"
-        >
-          <img
-            src={
-              theme
-                ? "../../../public/svg/arrowdown.svg"
-                : "../../../public/svg/arrowdown-black.svg"
-            }
-            alt=""
-          />
+        <HashLink smooth scroll={(el) => globalFunctions.scrollWithOffset(el)} to="#drinks">
+          <img src={theme ? "../../../public/svg/arrowdown.svg" : "../../../public/svg/arrowdown-black.svg"} alt="" />
         </HashLink>
       </div>
     </header>
