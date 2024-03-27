@@ -185,7 +185,7 @@ const AddRecipe = () => {
             <p id="alert-red"></p>
             <p id="alert-green"></p>
           </article>
-          <img src="/svg/cover.png" alt="Drinks" className={hide ? "img-desk" : "img-center"} />
+          <img src={theme ? "../../../public/svg/cover-dark.png" : "../../../public/svg/cover-light.png"} alt="Drinks" className={hide ? "img-desk" : "img-center"} />
         </section>
         <div className="show-recipe">
           <div className="show-recipe-headline">
