@@ -60,7 +60,7 @@ nav button {
   overflow-y: scroll;
   box-shadow: 0 0 30px 10px rgba(255, 227, 232, 0.314);
 }
-.menu-pop-show:-webkit-scrollbar {
+.menu-pop-show::-webkit-scrollbar {
   display: none;
 }
 
@@ -107,7 +107,7 @@ nav button {
   color: black;
 }
 .wrapper-light .menu-pop-show a {
-  color: var(--global--accent--Colors);
+  color: #ffe3e8;
 }
 .wrapper-light .menu-pop-show a:hover {
   color: rgb(142, 124, 142);

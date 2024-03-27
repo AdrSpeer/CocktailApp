@@ -14,8 +14,10 @@ const Header = () => {
       <section className="hero">
         <div className="hero-con">
           <div className="text-con">
-            <h1>Cocktails & Getränke!</h1>
-            <p className="hero-p">Herzlich Willkommen in der Welt der Cocktails und Getränke!</p>
+            <h1>Cocktails & Chill!</h1>
+            <p className="hero-p">
+              Herzlich Willkommen in der Welt von Cocktails and Chill!
+            </p>
             <SearchBar />
           </div>
           <div className="img-con">
@@ -24,8 +26,19 @@ const Header = () => {
         </div>
       </section>
       <div className="arrow-div">
-        <HashLink smooth scroll={(el) => globalFunctions.scrollWithOffset(el)} to="#drinks">
-          <img src={theme ? "../../../public/svg/arrowdown.svg" : "../../../public/svg/arrowdown-black.svg"} alt="" />
+        <HashLink
+          smooth
+          scroll={(el) => globalFunctions.scrollWithOffset(el)}
+          to="#drinks"
+        >
+          <img
+            src={
+              theme
+                ? "../../../public/svg/arrowdown.svg"
+                : "../../../public/svg/arrowdown-black.svg"
+            }
+            alt=""
+          />
         </HashLink>
       </div>
     </header>
