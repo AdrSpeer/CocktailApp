@@ -10,7 +10,7 @@ import "./App.css";
 import LoadingPage from "./pages/LoadingPage/LoadingPage";
 
 function App() {
-  const [theme, setTheme] = useState("");
+  const [theme, setTheme] = useState(true);
   const [pop, setPop] = useState(false);
   const [drinkId, setDrinkId] = useState(null);
   const [loading, setLoading] = useState(true);

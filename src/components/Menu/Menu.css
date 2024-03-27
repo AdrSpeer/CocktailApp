@@ -56,8 +56,12 @@ nav button {
   border-radius: 20px;
   transition: 0.5s;
   padding: 10px;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   box-shadow: 0 0 30px 10px rgba(255, 227, 232, 0.314);
+}
+.menu-pop-show:-webkit-scrollbar {
+  display: none;
 }
 
 .menu-pop-show a {
