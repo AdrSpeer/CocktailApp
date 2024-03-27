@@ -185,7 +185,7 @@ const AddRecipe = () => {
           )}
         </div>
         <section className="add-recipe">
-          <article className="form-wrapper">
+          <article className={hide ? "form-wrapper" : "hide-form"}>
             <form className={hide ? "form-recipe" : "hide-form"}>
               <input placeholder="Name" id="nameDrink" type="text" required />
               <select required id="category">
