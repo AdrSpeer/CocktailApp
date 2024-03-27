@@ -27,12 +27,24 @@ const AddRecipe = () => {
 
   const recipeAlertGreen = document.getElementById("alert-green");
 
-  const textNodeNameInput = document.createTextNode("Bitte einen Namen einfügen!");
-  const textNodeCategoryInput = document.createTextNode("Bitte eine Kategorie auswählen!");
-  const textNodeDescriptionInput = document.createTextNode("Bitte eine Anleitung einfügen!");
-  const textNodeIngredientInput = document.createTextNode("Bitte mindestens eine Zutat angeben!");
-  const textNodeAmountInput = document.createTextNode("Bitte mindestens eine Menge angeben!");
-  const textNodeRecipeInput = document.createTextNode("Es wurde ein neues Rezept hinzugefügt!");
+  const textNodeNameInput = document.createTextNode(
+    "Bitte einen Namen einfügen!"
+  );
+  const textNodeCategoryInput = document.createTextNode(
+    "Bitte eine Kategorie auswählen!"
+  );
+  const textNodeDescriptionInput = document.createTextNode(
+    "Bitte eine Anleitung einfügen!"
+  );
+  const textNodeIngredientInput = document.createTextNode(
+    "Bitte mindestens eine Zutat angeben!"
+  );
+  const textNodeAmountInput = document.createTextNode(
+    "Bitte mindestens eine Menge angeben!"
+  );
+  const textNodeRecipeInput = document.createTextNode(
+    "Es wurde ein neues Rezept hinzugefügt!"
+  );
   // -------------------------------------------------------
   console.log("stored Cocktail", storedCocktail);
   console.log("newCocktail", newCocktail);
@@ -99,9 +111,11 @@ const AddRecipe = () => {
     ]);
 
     // Leere die Eingabefelder
-    document.querySelectorAll("form input, form textarea, form select").forEach((element) => {
-      element.value = "";
-    });
+    document
+      .querySelectorAll("form input, form textarea, form select")
+      .forEach((element) => {
+        element.value = "";
+      });
     // setCocktailConstructor({});
 
     recipeAlert.textContent = "";
@@ -138,7 +152,9 @@ const AddRecipe = () => {
     setSearchInput(inputValue);
 
     // Filtere die Daten basierend auf dem Suchbegriff
-    const filteredData = newCocktail.filter((item) => item.name.toLowerCase().includes(inputValue.toLowerCase()));
+    const filteredData = newCocktail.filter((item) =>
+      item.name.toLowerCase().includes(inputValue.toLowerCase())
+    );
 
     // Setze die gefilterten Daten in den State
     setFilteredData(filteredData);
@@ -156,7 +172,17 @@ const AddRecipe = () => {
         <h3>Füge deine eigenen Getränke hinzu! </h3>
         <div className="show-form">
           <h4>Neues Rezept hinzufügen</h4>
-          {hide ? <ExpandLessIcon style={theme ? { color: "#ffe3e8" } : { color: "black" }} onClick={() => setHide(false)} /> : <ExpandMoreIcon style={theme ? { color: "#ffe3e8" } : { color: "black" }} onClick={() => setHide(true)} />}
+          {hide ? (
+            <ExpandLessIcon
+              style={theme ? { color: "#ffe3e8" } : { color: "black" }}
+              onClick={() => setHide(false)}
+            />
+          ) : (
+            <ExpandMoreIcon
+              style={theme ? { color: "#ffe3e8" } : { color: "black" }}
+              onClick={() => setHide(true)}
+            />
+          )}
         </div>
         <section className="add-recipe">
           <article className="form-wrapper">
@@ -173,9 +199,20 @@ const AddRecipe = () => {
                 <option value="Alkoholfrei">Alkoholfrei</option>
               </select>
               <input type="text" placeholder="Bild URL" id="URL" />
-              <textarea id="anleitung" placeholder="Anleitung" cols="30" rows="10" required></textarea>
+              <textarea
+                id="anleitung"
+                placeholder="Anleitung"
+                cols="30"
+                rows="10"
+                required
+              ></textarea>
               <input type="text" placeholder="Zutat 1" required id="Zutat1" />
-              <input type="text" placeholder="Menge Zutat 1" required id="Menge1" />
+              <input
+                type="text"
+                placeholder="Menge Zutat 1"
+                required
+                id="Menge1"
+              />
               <input type="text" placeholder="Zutat 2" id="Zutat2" />
               <input type="text" placeholder="Menge Zutat 2" id="Menge2" />
               <input type="text" placeholder="Zutat 3" id="Zutat3" />
@@ -185,14 +222,42 @@ const AddRecipe = () => {
             <p id="alert-red"></p>
             <p id="alert-green"></p>
           </article>
-          <img src={theme ? "../../../public/svg/cover-dark.png" : "../../../public/svg/cover-light.png"} alt="Drinks" className={hide ? "img-desk" : "img-center"} />
+          <img
+            src={
+              theme
+                ? "../../../public/svg/cover-dark.png"
+                : "../../../public/svg/cover-light.png"
+            }
+            alt="Drinks"
+            className={hide ? "img-desk" : "img-center"}
+          />
         </section>
         <div className="show-recipe">
           <div className="show-recipe-headline">
             <h4>Deine Rezepte</h4>
-            {hideRecipe ? <ExpandLessIcon style={theme ? { color: "#ffe3e8" } : { color: "black" }} onClick={() => setHideRecipe(false)} /> : <ExpandMoreIcon style={theme ? { color: "#ffe3e8" } : { color: "black" }} onClick={() => setHideRecipe(true)} />}
+            {hideRecipe ? (
+              <ExpandLessIcon
+                style={theme ? { color: "#ffe3e8" } : { color: "black" }}
+                onClick={() => setHideRecipe(false)}
+              />
+            ) : (
+              <ExpandMoreIcon
+                style={theme ? { color: "#ffe3e8" } : { color: "black" }}
+                onClick={() => setHideRecipe(true)}
+              />
+            )}
           </div>
-          <input onChange={searchAll} value={searchInput} placeholder={placeholderVisible ? "Search..." : ""} type="text" onFocus={handleFocus} onBlur={handleBlur} name="searchbar" autoComplete="off" className={hideRecipe ? "input-show-add" : "hide-new-recipe"} />
+          <input
+            onChange={searchAll}
+            value={searchInput}
+            placeholder={placeholderVisible ? "Search..." : ""}
+            type="text"
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            name="searchbar"
+            autoComplete="off"
+            className={hideRecipe ? "input-show-add" : "hide-new-recipe"}
+          />
         </div>
 
         <div className={hideRecipe ? "drink-grid-added" : "hide-new-recipe"}>
@@ -207,7 +272,11 @@ const AddRecipe = () => {
                   }}
                 />
               </article>
-              <img src={cocktail?.URL} alt={cocktail?.name} onClick={() => setSelectedCocktail(cocktail)} />
+              <img
+                src={cocktail?.URL}
+                alt={cocktail?.name}
+                onClick={() => setSelectedCocktail(cocktail)}
+              />
             </div>
           ))}
         </div>
@@ -216,8 +285,21 @@ const AddRecipe = () => {
             <div className="add-pop-up">
               <div className="pop-show pop">
                 <div className="drink-div">
-                  <img onClick={() => setSelectedCocktail(null)} className="back-cross" src="../../../public/svg/Cross.svg" alt="" />
-                  <img className="drink-img" src={selectedCocktail?.URL} alt="" />
+                  <img
+                    onClick={() => setSelectedCocktail(null)}
+                    className="back-cross"
+                    src={
+                      theme !== true
+                        ? "../../../public/svg/Cross.svg"
+                        : "../../../public/svg/CrossBlack.svg"
+                    }
+                    alt=""
+                  />
+                  <img
+                    className="drink-img"
+                    src={selectedCocktail?.URL}
+                    alt=""
+                  />
                   <div className="content-con">
                     <h6 className="pop-h4">{selectedCocktail?.name}</h6>
                     <h5 className="pop-h5">Zutaten</h5>
