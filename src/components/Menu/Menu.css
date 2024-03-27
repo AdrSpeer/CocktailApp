@@ -1,3 +1,10 @@
+.loader-menu {
+  animation: fadein 0.5s;
+  -moz-animation: fadein 0.5s; /* Firefox */
+  -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+  -o-animation: fadein 0.5s; /* Opera */
+}
+
 .pop-dad {
   position: relative;
 }
@@ -23,8 +30,8 @@ nav button {
 .menu-cross {
   width: 15px;
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 0;
+  right: 0;
 }
 
 .menu-cross:hover {
@@ -38,17 +45,19 @@ nav button {
 .menu-pop {
   display: none;
 }
+
 .menu-pop-show {
-  width: 180px;
+  width: 120px;
   height: 180px;
   background-color: var(--global--accent--Color);
   position: absolute;
   top: 0;
-  right: 0;
-  border-radius: 4px;
+  right: -5px;
+  border-radius: 20px;
   transition: 0.5s;
   padding: 10px;
   overflow: scroll;
+  box-shadow: 0 0 30px 10px rgba(255, 227, 232, 0.314);
 }
 
 .menu-pop-show a {
@@ -68,4 +77,34 @@ nav button {
   background-color: rgb(142, 124, 142);
   border-radius: 10px;
   margin-block: 5px;
+}
+.theme {
+  width: 30px;
+  background-color: black;
+  padding: 2px;
+  border-radius: 50px;
+  margin-bottom: 5px;
+}
+
+.theme:hover {
+  scale: 1.05;
+}
+
+.wrapper-light .theme {
+  background-color: #ffe3e8;
+}
+
+.wrapper-light .menu-pop-show {
+  background-color: black;
+  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.314);
+}
+
+.wrapper-light .menu-btn {
+  color: black;
+}
+.wrapper-light .menu-pop-show a {
+  color: var(--global--accent--Colors);
+}
+.wrapper-light .menu-pop-show a:hover {
+  color: rgb(142, 124, 142);
 }

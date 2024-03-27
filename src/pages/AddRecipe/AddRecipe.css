@@ -18,21 +18,37 @@
   gap: 100px;
   margin-bottom: 80px;
 }
+
+.wrapper-light .add-recipe {
+  background-color: var(--global--accent--Color);
+}
+
 .add-recipe-wrapper {
-  font-family: 'Playfair Display';
+  font-family: "Playfair Display";
   padding: 40px;
 }
 .add-recipe-wrapper h3 {
-  color: white;
+  color: var(--global--accent--Color);
   font-size: 30px;
   font-weight: 600;
   text-align: center;
   margin-bottom: 30px;
 }
 .add-recipe-wrapper h4 {
-  color: white;
+  color: var(--global--accent--Color);
   font-weight: 600;
   text-align: center;
+}
+
+.wrapper-light .add-recipe-wrapper h3 {
+  color: black;
+}
+
+.wrapper-light .add-recipe-wrapper h4 {
+  color: black;
+}
+.wrapper-light .add-recipe-wrapper button {
+  color: var(--global--accent--Color);
 }
 
 .add-recipe button {
@@ -69,9 +85,21 @@ textarea {
   text-align: left;
   color: black;
 }
+.wrapper-light .add-recipe form input,
+.wrapper-light select,
+.wrapper-light textarea {
+  color: var(--global--accent--Color);
+  background-color: black;
+}
+.wrapper-light .add-recipe input::placeholder {
+  color: var(--global--accent--Color);
+}
+.wrapper-light .add-recipe textarea::placeholder {
+  color: var(--global--accent--Color);
+}
 
 .show-form {
-  color: white;
+  color: var(--global--accent--Color);
   display: flex;
   align-items: center;
   margin: 20px 0;
@@ -98,10 +126,10 @@ textarea {
 }
 
 .show-recipe {
-  color: white;
+  color: var(--global--accent--Color);
   display: flex;
   flex-direction: column;
-  font-family: 'Playfair Display';
+  font-family: "Playfair Display";
 }
 
 .recipe-box {
@@ -134,6 +162,14 @@ textarea {
   display: flex;
   justify-content: space-between;
   padding: 20px;
+}
+.wrapper-light .input-show-add {
+  background-color: black;
+  color: var(--global--accent--Color);
+}
+
+.wrapper-light .added-drink-box {
+  color: black;
 }
 
 .added-drink-box img {

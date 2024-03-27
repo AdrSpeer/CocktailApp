@@ -9,7 +9,7 @@ const Nav = () => {
     <>
       <nav>
         <Link to="/">
-          <Logo />
+          <p className="logo">DRINKS&CHILL</p>
         </Link>
         <Menu />
       </nav>

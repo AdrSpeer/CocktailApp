@@ -1,9 +1,19 @@
 .bg {
-  background-color: #010100;
+  background-color: black;
 }
 
 .wrapper {
   max-width: 1440px;
   margin-inline: auto;
-  background-color: #010100;
+  background-color: black;
+}
+
+.bg-light {
+  background-color: var(--global--accent--Color);
+}
+
+.wrapper-light {
+  max-width: 1440px;
+  margin-inline: auto;
+  background-color: var(--global--accent--Color);
 }

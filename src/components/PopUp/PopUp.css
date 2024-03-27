@@ -87,6 +87,11 @@
   margin-bottom: 5px;
 }
 
+.wrapper-light .pop-show {
+  background-color: black;
+  color: var(--global--accent--Color);
+}
+
 @media screen and (width <= 900px) {
   .drink-div {
     flex-direction: column;

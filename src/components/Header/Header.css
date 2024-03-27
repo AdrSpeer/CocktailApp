@@ -60,6 +60,16 @@ nav {
   padding-bottom: 50px;
 }
 
+.wrapper-light header h1 {
+  color: black;
+}
+.wrapper-light .hero-p {
+  color: black;
+}
+.wrapper-light header input {
+  color: black;
+}
+
 @media screen and (width <= 720px) {
   .img-con {
     display: none;

@@ -2,12 +2,14 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   color: black;
+  box-shadow: 0 0 30px 10px rgba(255, 227, 232, 0.314);
 }
 
 .input-hide {
   /* pointer-events: none; */
   border-radius: 5px;
   color: black;
+  box-shadow: 0 0 30px 10px rgba(255, 227, 232, 0.314);
 }
 
 .suggestions {
@@ -21,7 +23,7 @@
 
 .show {
   width: 350px;
-  height: 25%;
+  height: 150px;
   opacity: 1;
   display: flex;
   flex-direction: column;
@@ -33,6 +35,7 @@
   padding: 6px 18px;
   overflow: scroll;
   z-index: 5;
+  box-shadow: 0 0 30px 10px rgba(255, 227, 232, 0.314);
 }
 .suggestions p {
   font-family: "Roboto";
@@ -68,4 +71,24 @@
 
 .link-search p {
   color: #ffe3e8;
+}
+
+.wrapper-light .input-hide,
+.wrapper-light .input-show {
+  background-color: black;
+  color: var(--global--accent--Color);
+  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.314);
+}
+.wrapper-light .suggestions {
+  background-color: black;
+}
+.wrapper-light .suggestions p {
+  color: black;
+}
+.wrapper-light .link-search {
+  background-color: var(--global--accent--Color);
+}
+
+.wrapper-light .show {
+  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.314);
 }
